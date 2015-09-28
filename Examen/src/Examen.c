@@ -88,10 +88,7 @@
 int main(void)
 {
    /* perform the needed initialization here */
-
-
-
-InicializarLeds();
+InicializarLeds(); //Inicializa y apaga todos los leds
 InicializarADC();
 InicializarTeclas();
 InicializarTimer(); //Programo interrupcion perodica cada 100 mseg (10HZ) HabilitarInterrupcion();
@@ -107,29 +104,38 @@ for (;;)
 		dato = LeerValorADC();
 		if(LeerTecla1() == 0)
 			{
-			if(dato <= 1023)
+			while(LeerTecla4() != 0)
 				{
-					dato *= 1.2;
-					ActualizarValorDAC(dato);
-					InvertirLed1();
+				if(dato <= 1023)
+					{
+						dato *= 1.2;
+					}
+				ArrancarADC();
+				dato = LeerValorADC();
 				}
 			}
 		if(LeerTecla2() == 0)
 			{
-				if(dato >= 0)
+			while(LeerTecla4() != 0)
 				{
-					dato *= 0.8;
-					ActualizarValorDAC(dato);
-					InvertirLed1();
+				if(dato >= 0)
+					{
+						dato *= 0.8;
+					}
+				ArrancarADC();
+				dato = LeerValorADC();
 				}
-				}
+			}
 		if(LeerTecla3() == 0)
 			{
-				dato = 0;
-				ActualizarValorDAC(dato);
-				InvertirLed1();
+			while(LeerTecla4() != 0)
+				{
+					dato = 0;
+					ArrancarADC();
+					dato = LeerValorADC();
+				}
 			}
-		ActualizarValorDAC(dato);
+ 		ActualizarValorDAC(dato);
 		InvertirLed1();
 	}
 }
