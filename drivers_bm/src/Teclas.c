@@ -98,22 +98,22 @@ void InicializarTeclas(void)
 
 uint8_t LeerTecla1(void)
 {
-	Chip_GPIO_ReadPortBit(LPC_GPIO_PORT, 0, 4);
+	return Chip_GPIO_ReadPortBit(LPC_GPIO_PORT, 0, 4);
 }
 
 uint8_t LeerTecla2(void)
 {
-	Chip_GPIO_ReadPortBit(LPC_GPIO_PORT, 0, 8);
+	return Chip_GPIO_ReadPortBit(LPC_GPIO_PORT, 0, 8);
 }
 
 uint8_t LeerTecla3(void)
 {
-	Chip_GPIO_ReadPortBit(LPC_GPIO_PORT, 0, 9);
+	return Chip_GPIO_ReadPortBit(LPC_GPIO_PORT, 0, 9);
 }
 
 uint8_t LeerTecla4(void)
 {
-	Chip_GPIO_ReadPortBit(LPC_GPIO_PORT, 1, 9);
+	return Chip_GPIO_ReadPortBit(LPC_GPIO_PORT, 1, 9);
 }
 
 

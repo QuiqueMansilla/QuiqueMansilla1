@@ -106,7 +106,7 @@ void RIT_IRQHandler(void);
 void InicializarTimer(void);
 void HabilitarInterrupcion(void);
 void BorrarBandera(void);
-
+int EstadoBanderaTimer(void);
 
 #else
 #endif

@@ -110,12 +110,18 @@ void InicializarLeds(void)
 }
 
 
-void PrenderLed(void) // Led Amarillo
-//uint8_t LED;
-//switch LED
-//case
+void PrenderLed1(void) // Led Amarillo
 {
-	Chip_GPIO_SetPinOutHigh(LPC_GPIO_PORT,0,14);
+	Chip_GPIO_SetPinOutHigh(LPC_GPIO_PORT,0,14); //Led1 es el led Amarillo
+}
+
+void PrenderLedRojo(void)
+{
+	Chip_GPIO_SetPinOutHigh(LPC_GPIO_PORT,1,11);
+}
+void PrenderLedVerde(void)
+{
+	Chip_GPIO_SetPinOutHigh(LPC_GPIO_PORT,1,12);
 }
 void ApagarLed(void)
 {

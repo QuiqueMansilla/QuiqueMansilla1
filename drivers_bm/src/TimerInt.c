@@ -89,8 +89,9 @@
  */
 void InicializarTimer(void)
 {
+
 	Chip_RIT_Init(LPC_RITIMER);
-	Chip_RIT_SetTimerInterval(LPC_RITIMER,1); // En el PDF de manejo de timers falta la palabra "Interval"
+	Chip_RIT_SetTimerInterval(LPC_RITIMER,100); // En el PDF de manejo de timers falta la palabra "Interval"
 }
 void HabilitarInterrupcion(void)
 {
@@ -101,7 +102,10 @@ void BorrarBandera(void)
 	Chip_RIT_ClearInt(LPC_RITIMER); // En el PDF de manejo de timers falta el argumento de esta funcion
 }
 
-
+int EstadoBanderaTimer(void)
+{
+	return Chip_RIT_GetIntStatus(LPC_RITIMER);
+}
 
 /** @} doxygen end group definition */
 /** @} doxygen end group definition */

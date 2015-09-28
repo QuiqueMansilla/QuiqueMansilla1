@@ -99,13 +99,26 @@ void InicializarADC(void)
 int Valor_ADC(void)
 {
 	ArrancarADC();
+	return LeerValorADC();
 }
 
-void ArrancarADC(void);
+int LeerValorADC(void)
+{
+	uint16_t valor;
+	while(Chip_ADC_ReadStatus(LPC_ADC0, ADC_CH1, ADC_DR_DONE_STAT) != SET);
+	Chip_ADC_ReadValue(LPC_ADC0, ADC_CH1, &valor);
+	return valor;
+}
+
+void ArrancarADC(void)
 {
 	Chip_ADC_SetStartMode(LPC_ADC0, ADC_START_NOW, ADC_TRIGGERMODE_RISING);
 }
 
+void HabilitarInterrupcionADC(void)
+{
+	NVIC_EnableIRQ(17);
+}
 /** @} doxygen end group definition */
 /** @} doxygen end group definition */
 /** @} doxygen end group definition */

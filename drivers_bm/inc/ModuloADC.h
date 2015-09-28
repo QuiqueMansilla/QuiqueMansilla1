@@ -106,6 +106,8 @@ void RIT_IRQHandler(void);
 void InicializarADC(void);
 int Valor_ADC(void);
 void ArrancarADC(void);
+int LeerValorADC(void);
+void HabilitarInterrupcionADC(void);
 
 #else
 #endif
