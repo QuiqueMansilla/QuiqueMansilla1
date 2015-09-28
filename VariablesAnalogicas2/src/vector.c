@@ -24,7 +24,7 @@
  */
 
 /*==================[inclusions]=============================================*/
-#include "VariablesAnalogicas1.h"
+#include "VariablesAnalogicas2.h"
 
 /*==================[macros and definitions]=================================*/
 
@@ -107,7 +107,7 @@ void (* const g_pfnVectors[])(void) = {
    ISR_NoHandler,      /* 0x1e 0x00000078 - No Handler set for ISR DMA14_DMA30 (IRQ 14) */
    ISR_NoHandler,      /* 0x1f 0x0000007C - No Handler set for ISR DMA15_DMA31 (IRQ 15) */
    ISR_NoHandler,      /* 0x20 0x00000080 - No Handler set for ISR DMA_ERR (IRQ 16) */
-   ISR_NoHandler,      /* 0x21 0x00000084 - No Handler set for ISR MCM (IRQ 17) */
+   ADC_IRQ,      /* 0x21 0x00000084 - No Handler set for ISR MCM (IRQ 17) */
    ISR_NoHandler,      /* 0x22 0x00000088 - No Handler set for ISR FTFE (IRQ 18) */
    ISR_NoHandler,      /* 0x23 0x0000008C - No Handler set for ISR Read_Collision (IRQ 19) */
    ISR_NoHandler,      /* 0x24 0x00000090 - No Handler set for ISR LVD_LVW (IRQ 20) */

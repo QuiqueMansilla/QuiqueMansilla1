@@ -101,6 +101,7 @@ extern void _vStackTop(void);
 
 void RIT_IRQHandler(void);
 void TimerIRQ(void);
+void ADC_IRQ(void);
 
 
 

@@ -58,7 +58,7 @@
  */
 
 /*==================[inclusions]=============================================*/
-#include "VariablesAnalogicas2.h"       /* <= own header */
+#include "ExamenCursoQuiqueMansilla.h"       /* <= own header */
 
 
 /*==================[macros and definitions]=================================*/
@@ -89,15 +89,29 @@ int main(void)
 {
    /* perform the needed initialization here */
 InicializarLeds();
+InicializarADC();
+InicializarTimer(); //Programo interrupcion perodica cada 100 mseg
+HabilitarInterrupcion();
 
-PrenderLed();
+ArrancarADC();
 
-for (;;) {}
+
+for (;;){}
 
 	return 0;
 }
 
 void TimerIRQ(void)
+{
+	BorrarBandera();
+	ArrancarADC();
+
+	LeerValorADC();
+    ApagarLed();
+
+}
+
+void ADC_IRQ(void)
 {
 
 }
