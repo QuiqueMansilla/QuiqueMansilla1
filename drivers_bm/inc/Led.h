@@ -112,14 +112,29 @@ extern void _vStackTop(void);
 
 void RIT_IRQHandler(void);
 void InicializarLeds(void);
-void PrenderLed1(void);
-void ApagarLed(void);
+
+void ApagarLeds(void);
 void InvertirLed1(void);
 void InvertirLed2(void);
 void InvertirLed3(void);
-void InvertirLed4(void);
-void PrenderLedRojo(void);
-void PrenderLedVerde(void);
+void InvertirLedR(void);
+void InvertirLedG(void);
+void InvertirLedB(void);
+void PrenderLed1(void);
+void PrenderLed2(void);
+void PrenderLed3(void);
+void PrenderLedR(void);
+void PrenderLedG(void);
+void PrenderLedB(void);
+void ApagarLed1(void);
+void ApagarLed2(void);
+void ApagarLed3(void);
+void ApagarLedR(void);
+void ApagarLedG(void);
+void ApagarLedB(void);
+
+
+
 
 #else
 #endif

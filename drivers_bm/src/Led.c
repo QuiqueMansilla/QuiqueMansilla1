@@ -89,7 +89,7 @@
  */
 void InicializarLeds(void)
 {
-	Chip_GPIO_Init(LPC_GPIO_PORT);
+	Chip_GPIO_Init(LPC_GPIO_PORT);					//Inicializa y apaga los 6 LEDs de la EDU CIAA
 	Chip_SCU_PinMux(2,10,MD_PUP,FUNC0);
 	Chip_SCU_PinMux(2,11,MD_PUP,FUNC0);
 	Chip_SCU_PinMux(2,12,MD_PUP,FUNC0);
@@ -110,29 +110,43 @@ void InicializarLeds(void)
 }
 
 
-void PrenderLed1(void) // Led Amarillo
+void PrenderLed1(void) // Led1 = Led Amarillo
 {
-	Chip_GPIO_SetPinOutHigh(LPC_GPIO_PORT,0,14); //Led1 es el led Amarillo
+	Chip_GPIO_SetPinOutHigh(LPC_GPIO_PORT,0,14);
 }
 
-void PrenderLedRojo(void)
+void PrenderLed2(void) // Led2 = Led Rojo
 {
 	Chip_GPIO_SetPinOutHigh(LPC_GPIO_PORT,1,11);
 }
-void PrenderLedVerde(void)
+void PrenderLed3(void) // Led3 = Led Verde
 {
 	Chip_GPIO_SetPinOutHigh(LPC_GPIO_PORT,1,12);
 }
-void ApagarLed(void)
+void PrenderLedR(void) // LedR = Led Rojo (RGB)
+{
+	Chip_GPIO_SetPinOutHigh(LPC_GPIO_PORT,5,2);
+}
+void PrenderLedG(void) // LedG = Led Verde (RGB)
+{
+	Chip_GPIO_SetPinOutHigh(LPC_GPIO_PORT,5,1);
+}
+void PrenderLedB(void) // LedB = Led Azul (RGB)
+{
+	Chip_GPIO_SetPinOutHigh(LPC_GPIO_PORT,5,0);
+}
+void ApagarLeds(void) //Apaga los 6 LEDs
 {
 	Chip_GPIO_SetPinOutLow(LPC_GPIO_PORT,0,14);
 	Chip_GPIO_SetPinOutLow(LPC_GPIO_PORT,1,11);
 	Chip_GPIO_SetPinOutLow(LPC_GPIO_PORT,1,12);
 	Chip_GPIO_SetPinOutLow(LPC_GPIO_PORT,5,2);
+	Chip_GPIO_SetPinOutLow(LPC_GPIO_PORT,5,1);
+	Chip_GPIO_SetPinOutLow(LPC_GPIO_PORT,5,0);
 }
-void InvertirLed1(void) // Led1 = Verde
+void InvertirLed1(void) // Led1 = Amarillo
 {
-	Chip_GPIO_SetPinToggle(LPC_GPIO_PORT,1,12);
+	Chip_GPIO_SetPinToggle(LPC_GPIO_PORT,0,14);
 }
 
 void InvertirLed2(void) // Led2 = Rojo
@@ -142,14 +156,45 @@ void InvertirLed2(void) // Led2 = Rojo
 
 void InvertirLed3(void) // Led3 = Amarillo
 {
-	Chip_GPIO_SetPinToggle(LPC_GPIO_PORT,0,14);
+	Chip_GPIO_SetPinToggle(LPC_GPIO_PORT,1,12);
 }
-void InvertirLed4(void) // Led4 = Led0B = RGBB
+void InvertirLedR(void) // LedR = Led0R = Rojo (RGB)
+{
+	Chip_GPIO_SetPinToggle(LPC_GPIO_PORT,5,0);
+}
+void InvertirLedG(void) // LedG = Led0G = Verde (RGB)
+{
+	Chip_GPIO_SetPinToggle(LPC_GPIO_PORT,5,1);
+}
+
+void InvertirLedB(void) // LedB = Led0B = Azul (RGB)
 {
 	Chip_GPIO_SetPinToggle(LPC_GPIO_PORT,5,2);
 }
-
-
+void ApagarLed1(void)
+{
+	Chip_GPIO_SetPinOutLow(LPC_GPIO_PORT,0,14);
+}
+void ApagarLed2(void)
+{
+	Chip_GPIO_SetPinOutLow(LPC_GPIO_PORT,1,11);
+}
+void ApagarLed3(void)
+{
+	Chip_GPIO_SetPinOutLow(LPC_GPIO_PORT,1,12);
+}
+void ApagarLedR(void)
+{
+	Chip_GPIO_SetPinOutLow(LPC_GPIO_PORT,5,0);
+}
+void ApagarLedG(void)
+{
+	Chip_GPIO_SetPinOutLow(LPC_GPIO_PORT,5,1);
+}
+void ApagarLedB(void)
+{
+	Chip_GPIO_SetPinOutLow(LPC_GPIO_PORT,5,2);
+}
 
 /** @} doxygen end group definition */
 /** @} doxygen end group definition */

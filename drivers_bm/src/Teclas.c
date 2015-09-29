@@ -86,7 +86,7 @@
  */
 void InicializarTeclas(void)
 {
-	Chip_GPIO_Init(LPC_GPIO_PORT);
+	Chip_GPIO_Init(LPC_GPIO_PORT);					//Inicializa las 4 teclas de la Edu CIAA
 	Chip_SCU_PinMux(1,0,MD_PUP|MD_EZI|MD_ZI,FUNC0);
 	Chip_SCU_PinMux(1,1,MD_PUP|MD_EZI|MD_ZI,FUNC0);
 	Chip_SCU_PinMux(1,2,MD_PUP|MD_EZI|MD_ZI,FUNC0);
