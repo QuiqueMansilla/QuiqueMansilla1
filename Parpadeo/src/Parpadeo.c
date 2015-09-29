@@ -103,10 +103,10 @@ if (LeerTecla1() == 0)
 
 			}
 
-		InvertirLed1();
+		InvertirLedB();
 		if ((LeerTecla2() == 0) | (LeerTecla3() == 0) | (LeerTecla4() == 0))
 		{
-			ApagarLed();
+			ApagarLeds();
 			break;
 		}
 		}
@@ -122,10 +122,10 @@ if (LeerTecla2() == 0)
 
 			}
 
-		InvertirLed2();
+		InvertirLed1();
 		if ((LeerTecla1() == 0) | (LeerTecla3() == 0) | (LeerTecla4() == 0))
 		{
-			ApagarLed();
+			ApagarLeds();
 			break;
 		}
 		}
@@ -141,10 +141,10 @@ if (LeerTecla3() == 0)
 
 		}
 
-	InvertirLed3();
+	InvertirLed2();
 	if ((LeerTecla1() == 0) | (LeerTecla2() == 0) | (LeerTecla4() == 0))
 			{
-		ApagarLed();
+		ApagarLeds();
 		break;
 			}
 	}
@@ -159,10 +159,10 @@ if (LeerTecla4() == 0)
 
 		}
 
-	InvertirLed4();
+	InvertirLed3();
 	if ((LeerTecla1() == 0) | (LeerTecla2() == 0) | (LeerTecla3() == 0))
 			{
-		ApagarLed();
+		ApagarLeds();
 		break;
 			}
 	}
